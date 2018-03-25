@@ -7,7 +7,7 @@
 You may want to use ```ruby gem capybara-webkit```, which depends on qt5.
 To make this work open up your shell and type the folowing command:
 
-$ sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
+($): sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
 
 ### Configuration
 
@@ -38,7 +38,7 @@ This project uses * postgresql * adapter.
 
 To create a **bookstore_test** and **bookstore_development** database simply run:
 
-($) rails db:create
+($): rails db:create
 
 For the staging environment add the folowing lines to * config/database.yml *:
 
@@ -50,7 +50,7 @@ For the staging environment add the folowing lines to * config/database.yml *:
 
 Don`t forget to generate a secret key:
 
-$ rails secret
+($): rails secret
 
 Clip and paste that line to * config/secrets.yml *:
 
@@ -62,13 +62,13 @@ Clip and paste that line to * config/secrets.yml *:
 
 And create the staging database:
 
-$ RAILS_ENV=staging rails db:create
+($): RAILS_ENV=staging rails db:create
 
 ### Database initialization
 
 To initialize an empty database simply run:
 
-$ rails db:schema:load
+($): rails db:schema:load
 
 ### TODO
 
