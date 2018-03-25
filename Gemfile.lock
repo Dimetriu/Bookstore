@@ -239,7 +239,8 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  capybara-webkit (~> 1.15)
+  capybara (~> 2.18)
+  capybara-webkit
   coffee-rails (~> 4.2)
   database_cleaner (~> 1.6, >= 1.6.2)
   factory_bot_rails (~> 4.8, >= 4.8.2)

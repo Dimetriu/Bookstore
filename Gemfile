@@ -22,6 +22,7 @@ group :development, :test do
     gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
   end
 
+  gem 'capybara-webkit'
   gem 'rspec_junit_formatter', '~> 0.3.0'
   gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -35,7 +36,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara-webkit', '~> 1.15'
+  gem 'capybara', '~> 2.18'
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
   gem 'rails-controller-testing'
