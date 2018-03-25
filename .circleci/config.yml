@@ -1,0 +1,49 @@
+version: 2
+jobs:
+  build:
+    docker:
+       - image: circleci/ruby:2.5.0-stretch-node-browsers
+         environment:
+           PGHOST: 127.0.0.1
+           PGUSER: dima
+           RAILS_ENV: test
+       - image: circleci/postgres:10.3-alpine-postgis
+         environment:
+          POSTGRES_USER: dima
+          POSTGRES_DB: bookstore_test
+
+    working_directory: ~/ruby_garage/homeworks/Bookstore/bookstore
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-
+
+      - run: gem update bundler
+
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+        
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:migrate
+      - run: bundle exec rake db:schema:load
+
+      - type: shell
+        command: |
+          bundle exec rspec --profile 10 \
+                            --format RspecJunitFormatter \
+                            --out test_results/rspec.xml \
+                            --format progress \
+                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      - store_test_results:
+          path: test_results
