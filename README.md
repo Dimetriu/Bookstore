@@ -1,6 +1,4 @@
-# Bookstore App
-
-[![CircleCI](https://circleci.com/gh/Dimetriu/Bookstore-econnerce.svg?style=svg)](https://circleci.com/gh/Dimetriu/Bookstore-econnerce)
+# Bookstore App [![CircleCI](https://circleci.com/gh/Dimetriu/Bookstore-econnerce.svg?style=svg)](https://circleci.com/gh/Dimetriu/Bookstore-econnerce)
 
 ## Ruby version `2.5.0`
 
@@ -9,7 +7,7 @@
 You may want to use ```ruby gem capybara-webkit```, which depends on qt5.
 To make this work open up your shell and type the folowing command:
 
-($) sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
+$ sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
 
 ### Configuration
 
@@ -52,7 +50,7 @@ For the staging environment add the folowing lines to * config/database.yml *:
 
 Don`t forget to generate a secret key:
 
-($) rails secret
+$ rails secret
 
 Clip and paste that line to * config/secrets.yml *:
 
@@ -64,13 +62,13 @@ Clip and paste that line to * config/secrets.yml *:
 
 And create the staging database:
 
-($) RAILS_ENV=staging rails db:create
+$ RAILS_ENV=staging rails db:create
 
 ### Database initialization
 
 To initialize an empty database simply run:
 
-($) rails db:schema:load
+$ rails db:schema:load
 
 ### TODO
 
