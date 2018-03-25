@@ -35,7 +35,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.18'
   gem 'capybara-webkit', '~> 1.15'
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
