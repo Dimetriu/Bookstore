@@ -7,7 +7,7 @@ jobs:
            PGHOST: 127.0.0.1
            PGUSER: dima
            RAILS_ENV: test
-       - image: circleci/postgres:10.3-alpine-postgis
+       - image: circleci/postgres:10.3-alpine-ram
          environment:
           POSTGRES_USER: dima
           POSTGRES_DB: bookstore_test
