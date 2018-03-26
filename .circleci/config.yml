@@ -40,14 +40,13 @@ jobs:
           name: Create Database
           command: |
             bundle exec rails db:create
-            
+
       - run: 
           name: Load Database Schema
           command: |
             bundle exec rails db:schema:load
 
       - type: shell
-          name: Run tests
           command: |
             xvfb-run -a bundle exec rspec --profile 10 \
                                           --format RspecJunitFormatter \
