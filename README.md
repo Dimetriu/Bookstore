@@ -1,4 +1,6 @@
-# Bookstore App [![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)](https://circleci.com/gh/Dimetriu/Bookstore) ![VersionEye](https://img.shields.io/versioneye/d/ruby/rails.svg)
+# Bookstore App
+
+[![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)](https://circleci.com/gh/Dimetriu/Bookstore) [![VersionEye](https://img.shields.io/versioneye/d/ruby/rails.svg)](https://github.com/Dimetriu/Bookstore/network/dependencies)
 
 ## Ruby version 2.5.0
 
