@@ -22,14 +22,12 @@ jobs:
           - v1-dependencies-{{ checksum "Gemfile.lock" }}
           - v1-dependencies-
 
-      - run: gem update bundler
-
       - run:
           name: Install System Dependencies
           command: sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
 
       - run:
-          name: install dependencies
+          name: Install Dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
@@ -37,17 +35,24 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-        
-      - run: bundle exec rails db:create
-      - run: bundle exec rails db:migrate
-      - run: bundle exec rails db:schema:load
+
+      - run:
+          name: Create Database
+          command: |
+            bundle exec rails db:create
+            
+      - run: 
+          name: Load Database Schema
+          command: |
+            bundle exec rails db:schema:load
 
       - type: shell
-        command: |
-          xvfb-run -a bundle exec rspec --profile 10 \
-                                        --format RspecJunitFormatter \
-                                        --out test_results/rspec.xml \
-                                        --format progress \
-                                        $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+          name: Run tests
+          command: |
+            xvfb-run -a bundle exec rspec --profile 10 \
+                                          --format RspecJunitFormatter \
+                                          --out test_results/rspec.xml \
+                                          --format progress \
+                                          $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
       - store_test_results:
           path: test_results
