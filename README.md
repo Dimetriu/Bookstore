@@ -1,6 +1,6 @@
 # Bookstore App [![CircleCI](https://circleci.com/gh/Dimetriu/Bookstore-econnerce.svg?style=svg)](https://circleci.com/gh/Dimetriu/Bookstore-econnerce)
 
-### Ruby version `2.5.0`
+###### Ruby version 2.5.0
 
 ### System dependencies
 
@@ -30,34 +30,35 @@ Rails.application.configure do
   config.cache_store = :mem_cache_store
 
   # ...
+end
 ```
 
 ### Database creation
 
-This project uses * postgresql * adapter.
+This project uses _postgresql_ adapter.
 
 To create a **bookstore_test** and **bookstore_development** database simply run:
 
 `$ rails db:create`
 
-For the staging environment add the folowing lines to * config/database.yml *:
+For the staging environment add the folowing lines to _config/database.yml_:
 
 ```ruby
-  staging:
-    <<: *default
-    database: bookstore_staging
+staging:
+  <<: *default
+  database: bookstore_staging
 ```
 
 Don`t forget to generate a secret key:
 
 `$ rails secret`
 
-Clip and paste that line to * config/secrets.yml *:
+Clip and paste that line to _config/secrets.yml_:
 
 ```ruby
   # your secret key generated previously
-  staging:
-    secret_key_base: 67b62eabff24448643c994fbefe789f1ae1210a37b009f106184ed2777464d121d63da0f8410abe73d566183892ad83cb19502c23cca36c4a8a949b04d6a15e6 
+staging:
+  secret_key_base: 67b62eabff24448643c994fbefe789f1ae1210a37b009f106184ed2777464d121d63da0f8410abe73d566183892ad83cb19502c23cca36c4a8a949b04d6a15e6
 ```
 
 And create the staging database:
