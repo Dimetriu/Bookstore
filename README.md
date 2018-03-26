@@ -1,4 +1,4 @@
-# Bookstore App [![CircleCI](https://circleci.com/gh/Dimetriu/Bookstore-econnerce.svg?style=svg)](https://circleci.com/gh/Dimetriu/Bookstore-econnerce)
+# Bookstore App [![CircleCI](https://circleci.com/gh/Dimetriu/Bookstore.svg?style=svg)](https://circleci.com/gh/Dimetriu/Bookstore)
 
 ###### Ruby version 2.5.0
 
