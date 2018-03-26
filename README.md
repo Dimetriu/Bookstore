@@ -1,6 +1,6 @@
-# Bookstore App [![CircleCI](https://circleci.com/gh/Dimetriu/Bookstore.svg?style=svg)](https://circleci.com/gh/Dimetriu/Bookstore)
+# Bookstore App [![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)](https://circleci.com/gh/Dimetriu/Bookstore) ![VersionEye](https://img.shields.io/versioneye/d/ruby/rails.svg)
 
-###### Ruby version 2.5.0
+## Ruby version 2.5.0
 
 ### System dependencies
 
@@ -20,6 +20,7 @@ Actually this behaves like a production environment, so the configuration might 
 
 require File.expand_path('../production.rb', __FILE__) # just to copy the production.rb settings
 ```
+
 Or alternatively you can specify your own configurations:
 
 ```ruby
