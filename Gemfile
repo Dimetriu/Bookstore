@@ -7,6 +7,7 @@ end
 
 ruby '2.5.0'
 
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'rails', '~> 5.1.5'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
@@ -19,6 +20,14 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.4', '>= 4.4.3'
+# TODO: setup configurations on development branch
+gem 'omniauth-facebook'
+gem 'rails_admin', '~> 1.3'
+gem 'cancancan', '~> 2.1', '>= 2.1.3'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'carrierwave', '~> 1.2', '>= 1.2.2'
+gem 'fog-aws', '~> 2.0', '>= 2.0.1'
+
 
 group :development, :test do
   %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
