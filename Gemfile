@@ -27,7 +27,8 @@ gem 'cancancan', '~> 2.1', '>= 2.1.3'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'fog-aws', '~> 2.0', '>= 2.0.1'
-
+gem 'aasm'
+gem 'haml-rails', '~> 1.0'
 
 group :development, :test do
   %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
