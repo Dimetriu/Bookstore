@@ -23,10 +23,10 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 # TODO: setup configurations on development branch
 gem 'omniauth-facebook'
 gem 'rails_admin', '~> 1.3'
-gem 'cancancan', '~> 2.1', '>= 2.1.3' #
-gem 'kaminari', '~> 1.1', '>= 1.1.1' #
+gem 'cancancan', '~> 2.1', '>= 2.1.3' 
+gem 'kaminari', '~> 1.1', '>= 1.1.1' 
 gem 'carrierwave', '~> 1.2', '>= 1.2.2' 
-gem "mini_magick" #
+gem "mini_magick" 
 gem 'fog-aws', '~> 2.0', '>= 2.0.1'
 gem 'aasm'
 gem 'haml-rails', '~> 1.0'
