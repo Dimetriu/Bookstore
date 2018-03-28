@@ -1,5 +1,8 @@
 RailsAdmin.config do |config|
 
+  config.authenticate_with { warden.authenticate! scope: :admin }
+  config.current_user_method(&:current_admin)
+
   ### Popular gems integration
 
   ## == Devise ==
