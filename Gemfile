@@ -20,7 +20,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.4', '>= 4.4.3'
-# TODO: setup configurations on development branch
 gem 'omniauth-facebook'
 gem 'rails_admin', '~> 1.3'
 gem 'cancancan', '~> 2.1', '>= 2.1.3' 
