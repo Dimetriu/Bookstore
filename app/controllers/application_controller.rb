@@ -8,14 +8,19 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    request.env['omniauth.origin'] || stored_location_for(resource) || root_path
+    sign_in_url = new_user_session_url
+      if request.referer == sign_in_url
+        super
+      else
+        stored_location_for(resource) || request.referer || root_url
+      end
   end
 
-  def after_sign_out_path_for(user)
-    stored_location_for(user) || super
+  def after_sign_out_path_for(resource)
+    stored_location_for(resource) || super
   end
 
-  protected :after_sign_out_path_for
+  protected :after_sign_in_path_for
 
   private
 
