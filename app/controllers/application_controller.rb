@@ -1,11 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+
   before_action :store_user_location!, if: :storable_location?
 
-  def default_url_options
-    { locale: I18n.locale }
-  end
+    def set_locale
+      I18n.locale = params[:locale]
+    end
+
+    def self.default_url_options(options={})
+      options.merge({ :locale => I18n.locale })
+    end
 
   def after_sign_in_path_for(resource)
     sign_in_url = new_user_session_url

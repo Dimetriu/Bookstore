@@ -20,9 +20,9 @@
               %i.fa.fa-check
             %span.checkbox-text Remember me
       .text-center
-        %button.btn.btn-default.mb-20 Back to Store
+        = back_to_store
       %p.general-sign-text.text-center
         Don’t have an Account? 
         = link_to "Sign up", new_registration_path(resource_name), {class: 'in-gold-500' } if devise_mapping.registerable? && controller_name != 'registrations' 
-    = render "devise/shared/links" 
+        = render "devise/shared/links" 
       
