@@ -7,6 +7,7 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    - flash.each do |name, msg|
-      = content_tag :div, msg, id: "flash-#{name}"
-    = yield
+    .wrapper
+      - flash.each do |name, msg|
+        = content_tag :div, msg, id: "flash-#{name}"
+      = yield
