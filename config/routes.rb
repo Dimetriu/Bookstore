@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
   
-  devise_for :users
+  devise_for :users, controllers: { omiauth_callbacks: 'users/omniauth_callbacks' }
   
   devise_for :admins
 
