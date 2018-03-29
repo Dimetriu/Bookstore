@@ -1,0 +1,14 @@
+- if user_signed_in?
+  %li
+    = link_to 'Home', root_url, { class: 'nav-link' }
+  %li
+    = link_to 'Shop', root_url, { class: 'nav-link' }
+  %li
+    = link_to 'Orders', root_url, { class: 'nav-link' }
+  %li
+    = link_to 'Settings', root_url, { class: 'nav-link' }
+- else
+  %li
+    = link_to 'Home', root_url, { class: 'nav-link' }
+  %li
+    = link_to 'Shop', root_url, { class: 'nav-link' }
