@@ -17,7 +17,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    # TODO: need a fix redirections
     redirect_to root_url
   end
 
