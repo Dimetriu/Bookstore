@@ -3,7 +3,7 @@
 %li.dropdown
   = link_to 'Shop', root_url, { class: 'dropdown-toggle', 'data-toggle': 'dropdown', 'role': 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' }
   %ul.dropdown-menu
-  
+
   - if user_signed_in?
     %li.dropdown
       = link_to 'My account', root_url, { class: 'dropdown-toggle', 'data-toggle': 'dropdown', 'role': 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' }
@@ -24,3 +24,5 @@
     = link_to root_url do
       %span.shop-icon
         -# %span.shop-quantity 
+
+-# TODO: fix line 6 render categories
