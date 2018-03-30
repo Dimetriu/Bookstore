@@ -1,4 +1,4 @@
 %p.general-sign-text.text-center
   Don’t have an Account? 
   = link_to "Sign up", new_registration_path(resource_name), {class: 'in-gold-500' } if devise_mapping.registerable? && controller_name != 'registrations' 
-  = render "devise/shared/links" 
+  = render "devise/shared/links"
