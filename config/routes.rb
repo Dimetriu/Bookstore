@@ -6,8 +6,9 @@ Rails.application.routes.draw do
               sessions: 'users/sessions',
               registrations: 'users/registrations',
               passwords: 'users/passwords'
+              
             }
-  
+
   devise_for :admins
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
