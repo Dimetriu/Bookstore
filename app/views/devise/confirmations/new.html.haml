@@ -1,0 +1,12 @@
+%main.container.general-main-wrap
+  .text-center
+    %h1.mb-30 Resend confirmation instructions
+    %p.general-password-text We'll email you instructions on how to reset it
+  %form.general-form
+    = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+      = f.error_notification
+      .form-group.mb-25
+        = f.input :email, required: true, autofocus: true, placeholder: "Enter your email", label: false
+      = f.button :submit, "Resend confirmation instructions", class: 'btn btn-default center-block mb-20'
+    .text-center
+      = render "devise/shared/links"
