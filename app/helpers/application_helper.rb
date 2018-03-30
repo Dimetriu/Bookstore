@@ -1,9 +1,9 @@
 module ApplicationHelper
-  def back_to_store
+  def back_to_store_button(html_options = {})
     if URI(request.referer).path.split('/').include? 'users'
-      link_to "Back to Store", root_url, { class: 'btn btn-default mb-20' }
+      link_to "Back to Store", root_url, html_options
     else
-      link_to "Back to Store", request.referer, { class: 'btn btn-default mb-20' }
+      link_to "Back to Store", :back, html_options
     end
   end
 end
