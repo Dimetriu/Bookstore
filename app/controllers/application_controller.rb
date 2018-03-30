@@ -3,14 +3,20 @@ class ApplicationController < ActionController::Base
 
 
   before_action :store_user_location!, if: :storable_location?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-    def set_locale
-      I18n.locale = params[:locale]
-    end
+  def configure_permitted_parameters
+    update_attrs = [:password, :password_confirmation, :current_password]
+    devise_parameter_sanitizer.permit :account_update, keys: update_attrs
+  end
 
-    def self.default_url_options(options={})
-      options.merge({ :locale => I18n.locale })
-    end
+  def set_locale
+    I18n.locale = params[:locale]
+  end
+
+  def self.default_url_options(options={})
+    options.merge({ :locale => I18n.locale })
+  end
 
   def after_sign_in_path_for(resource)
     sign_in_url = new_user_session_url
