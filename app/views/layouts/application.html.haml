@@ -10,7 +10,6 @@
   %body
     .wrapper
       = render 'shared/header.html.haml'
-      - flash.each do |name, msg|
-        = content_tag :div, msg, id: "flash-#{name}"
+      = render 'shared/notifications.html.haml'
       = yield
     = render 'shared/footer.html.haml'
